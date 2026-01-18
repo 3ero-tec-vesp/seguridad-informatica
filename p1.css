@@ -111,37 +111,61 @@ main {
     box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .card img {
-    display: grid;
-    width: clamp(150px, 100%, 520px);
-    max-width: 200%;
+    display: block;
+    width: 100%;
+    max-width: 350px;
     height: auto;
-    margin: 20px auto 10px;
+    margin: 10px auto;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
 }
+
+.card img:hover {
+    transform: scale(1.02) translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+}
+
 .galeria {
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 0.75rem auto;
+    justify-content: center;
+    align-items: flex-start;
 }
+
+.galeria figure {
+    flex: 0 1 auto;
+    max-width: 280px;
+}
+
+.galeria img {
+    width: 100%;
+    max-width: 280px;
+}
+
+figure {
+    margin: 0;
+    position: relative;
+}
+
 figcaption {
-  font-style: italic;
-  color: #c9d1d9;
-  opacity: 0;
-  text-align: center;
-  transition: opacity 0.3s ease;
+    font-style: italic;
+    color: #c9d1d9;
+    opacity: 0;
+    text-align: center;
+    transition: opacity 0.3s ease;
+    margin-top: 0.5rem;
 }
-img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
-  transform: translateY(-10px);
-}
+
 figure:hover figcaption {
-  opacity: 1;
+    opacity: 1;
 }
+
 h2 {
     color: #c9d1d9;
     font-size: clamp(22px, 3.5vw, 35px);
@@ -209,8 +233,22 @@ li {
     }
 
     .card img {
-        width: clamp(200px, 100%, 100%);
-        margin: 15px auto 0;
+        max-width: 100%;
+        margin: 10px auto 0;
+    }
+
+    .galeria {
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .galeria figure {
+        max-width: 45%;
+    }
+
+    .galeria img {
+        max-width: 100%;
     }
 }
 
@@ -267,6 +305,10 @@ li {
         font-size: 14px;
         line-height: 1.5;
     }
+
+    .galeria {
+        gap: 1rem;
+    }
 }
 
 @media (max-width: 360px) {
@@ -320,5 +362,9 @@ li {
     .card img {
         width: 30%;
         max-width: 250px;
+    }
+
+    .galeria {
+        gap: 1rem;
     }
 }
